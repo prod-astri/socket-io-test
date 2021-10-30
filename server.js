@@ -19,4 +19,9 @@ const io = socket(server, {
 io.on('connection', (socket) => {
   console.log('socket id:', socket.id)
   console.log('new connection')
+  //                       V i have access to the payload in the callback because of socket
+  socket.on('new-message', payload => {
+
+  console.log('nessage:', payload)
+  })
 })
